@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{{ Auth::user()->name }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,6 +15,7 @@
                     @endif
 
                    Você esta logado!
+                   Agora você pode salvar todos os seus contatos e acessar quando quizer.
                 </div>
             </div>
         </div>

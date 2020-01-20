@@ -27,7 +27,7 @@ class ClientesController extends Controller
 
        $cliente = $cliente->create($request->all());      
 
-       return view('clientes.lista');
+       return redirect('clientes');
 
     }
 
