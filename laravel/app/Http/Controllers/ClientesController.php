@@ -25,8 +25,14 @@ class ClientesController extends Controller
 
        $cliente = new Cliente();
 
-       $cliente = $cliente->create($request->all());      
+      $cliente->nome = $request->get('nome');
+      $cliente->telefone = $request->get('telefone');
+		$cliente->email = $request->get('email');		
+		$cliente->iduser = auth()->id();
+		$cliente->save();
 
+       //$cliente = $cliente->create($request->all());    
+      
        return redirect('clientes');
 
     }

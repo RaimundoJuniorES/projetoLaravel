@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+<?php
+    session_start();
+
+    $_SESSION["idUser"]=null;
+
+?>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,8 +21,8 @@
                         </div>
                     @endif
 
-                   Você esta logado!
-                   Agora você pode salvar todos os seus contatos e acessar quando quizer.
+                   Você esta logado! Agora você pode salvar todos os seus contatos e acessar quando quizer.
+                   
                 </div>
             </div>
         </div>

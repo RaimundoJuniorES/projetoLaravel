@@ -25,6 +25,12 @@
                         {{ Form::open(['url' => 'clientes/salvar', 'method' => 'post']) }}
                     @endif
 
+                    <?php 
+
+                        $idUser=Auth::user()->id;
+
+                    ?>
+
 
                     <div class="form-group">
                         {{ Form::label('text', 'Nome', ['class' => 'awesome']) }}
@@ -40,6 +46,8 @@
                         {{ Form::label('text', 'email', ['class' => 'awesome']) }}
                         {{ Form::text('email', NULL, ['class' => 'form-control', 'placeholder' => 'email'])}}
                     </div> 
+
+                        {{ Form::hidden('iduser', $idUser) }}
 
                      <div class="form-group">
                         {{ Form::submit('salvar', ['class' => 'btn btn-primary float-right']) }}

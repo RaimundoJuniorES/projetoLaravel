@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-auto">
+        <div class="col col-lg-12">
             <div class="card">
                 <div class="card-header">
                 
@@ -32,9 +32,11 @@
                         <th class="table-secondary">Email</th>
                         <th class="table-secondary">Opções</th>
                         
+                        
                         <tbody>
                             @foreach($clientes as $cliente)
                                 <tr>
+                                @if( $cliente->iduser == auth()->id())
                                     <td>{{ $cliente->nome }}</td>
                                     <td>{{ $cliente->telefone }}</td>
                                     <td>{{ $cliente->email }}</td>
@@ -44,6 +46,7 @@
                                         <button type="submit" class="btn btn-danger">Excluir</button>
                                         {{ Form::close() }}
                                     </td>
+                                @endif
                                 </tr>
                             @endforeach 
                         <tbody>
